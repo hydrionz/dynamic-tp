@@ -1,28 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>cn.dynamictp</groupId>
+        <groupId>org.dromara.dynamictp</groupId>
         <artifactId>dynamic-tp-test</artifactId>
-        <version>1.1.0</version>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
+
     <artifactId>dynamic-tp-test-extension</artifactId>
+    <packaging>pom</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>cn.dynamictp</groupId>
-            <artifactId>dynamic-tp-extension-limiter-redis</artifactId>
-        </dependency>
+    <modules>
+        <module>test-extension-agent</module>
+        <module>test-extension-limiter-redis</module>
+    </modules>
 
-        <dependency>
-            <groupId>cn.dynamictp</groupId>
-            <artifactId>dynamic-tp-extension-notify-email</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.dynamictp</groupId>
-            <artifactId>dynamic-tp-extension-skywalking</artifactId>
-        </dependency>
-    </dependencies>
 </project>

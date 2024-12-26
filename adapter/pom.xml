@@ -3,16 +3,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>cn.dynamictp</groupId>
+        <groupId>org.dromara.dynamictp</groupId>
         <artifactId>dynamic-tp-all</artifactId>
-        <version>1.1.0</version>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>dynamic-tp-adapter</artifactId>
     <packaging>pom</packaging>
 
     <modules>
         <module>adapter-common</module>
-        <module>adapter-webserver</module>
         <module>adapter-dubbo</module>
         <module>adapter-rocketmq</module>
         <module>adapter-hystrix</module>
@@ -21,11 +21,14 @@
         <module>adapter-okhttp3</module>
         <module>adapter-brpc</module>
         <module>adapter-tars</module>
+        <module>adapter-sofa</module>
+        <module>adapter-rabbitmq</module>
+        <module>adapter-liteflow</module>
     </modules>
 
     <dependencies>
         <dependency>
-            <groupId>cn.dynamictp</groupId>
+            <groupId>org.dromara.dynamictp</groupId>
             <artifactId>dynamic-tp-core</artifactId>
         </dependency>
     </dependencies>

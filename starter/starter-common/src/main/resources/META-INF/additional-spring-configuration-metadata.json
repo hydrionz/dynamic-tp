@@ -1,0 +1,519 @@
+{
+  "groups": [
+    {
+      "name": "dynamictp",
+      "type": "org.dromara.dynamictp.common.properties.DtpProperties",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.etcd",
+      "type": "org.dromara.dynamictp.common.properties.DtpProperties$Etcd",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.jetty-tp",
+      "type": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.tomcat-tp",
+      "type": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.undertow-tp",
+      "type": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.zookeeper",
+      "type": "org.dromara.dynamictp.common.properties.DtpProperties$Zookeeper",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "dynamictp.brpc-tp",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.TpExecutorProps>",
+      "description": "Brpc thread pools.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.collector-types",
+      "type": "java.util.List<java.lang.String>",
+      "description": "Metrics collector types, default is logging. see {@link CollectorTypeEnum}",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.config-type",
+      "type": "java.lang.String",
+      "description": "Config file type, for zookeeper and etcd.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.dubbo-tp",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.TpExecutorProps>",
+      "description": "Dubbo thread pools.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.enabled",
+      "type": "java.lang.Boolean",
+      "description": "If enabled DynamicTp.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "dynamictp.enabled-banner",
+      "type": "java.lang.Boolean",
+      "description": "If print banner.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "dynamictp.enabled-collect",
+      "type": "java.lang.Boolean",
+      "description": "If enabled metrics collect.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "dynamictp.etcd.auth-enable",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties$Etcd",
+      "defaultValue": false
+    },
+    {
+      "name": "dynamictp.etcd.authority",
+      "type": "java.lang.String",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties$Etcd",
+      "defaultValue": "ssl"
+    },
+    {
+      "name": "dynamictp.etcd.charset",
+      "type": "java.lang.String",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties$Etcd",
+      "defaultValue": "UTF-8"
+    },
+    {
+      "name": "dynamictp.etcd.endpoints",
+      "type": "java.lang.String",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties$Etcd"
+    },
+    {
+      "name": "dynamictp.etcd.key",
+      "type": "java.lang.String",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties$Etcd"
+    },
+    {
+      "name": "dynamictp.etcd.password",
+      "type": "java.lang.String",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties$Etcd"
+    },
+    {
+      "name": "dynamictp.etcd.user",
+      "type": "java.lang.String",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties$Etcd"
+    },
+    {
+      "name": "dynamictp.executors",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.DtpExecutorProps>",
+      "description": "ThreadPoolExecutor configs.",
+      "sourceType": "org.dromara.dynamictp.common.entity.DtpExecutorProps"
+    },
+    {
+      "name": "dynamictp.grpc-tp",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.TpExecutorProps>",
+      "description": "Grpc thread pools.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.hystrix-tp",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.TpExecutorProps>",
+      "description": "Hystrix thread pools.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.jetty-tp.aware-names",
+      "type": "java.util.List<java.lang.String>",
+      "description": "Aware names.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.jetty-tp.core-pool-size",
+      "type": "java.lang.Integer",
+      "description": "CoreSize of ThreadPool.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": 1
+    },
+    {
+      "name": "dynamictp.jetty-tp.keep-alive-time",
+      "type": "java.lang.Long",
+      "description": "When the number of threads is greater than the core, this is the maximum time that excess idle threads will wait for new tasks before terminating.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": 60
+    },
+    {
+      "name": "dynamictp.jetty-tp.maximum-pool-size",
+      "type": "java.lang.Integer",
+      "description": "MaxSize of ThreadPool.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.jetty-tp.notify-enabled",
+      "type": "java.lang.Boolean",
+      "description": "If enable notify.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": true
+    },
+    {
+      "name": "dynamictp.jetty-tp.notify-items",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.NotifyItem>",
+      "description": "Notify items, see {@link NotifyItemEnum}",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.jetty-tp.platform-ids",
+      "type": "java.util.List<java.lang.String>",
+      "description": "Notify platform id",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.jetty-tp.queue-timeout",
+      "type": "java.lang.Long",
+      "description": "Task queue wait timeout, unit (ms), just for statistics.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": 0
+    },
+    {
+      "name": "dynamictp.jetty-tp.run-timeout",
+      "type": "java.lang.Long",
+      "description": "Task execute timeout, unit (ms), just for statistics.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": 0
+    },
+    {
+      "name": "dynamictp.jetty-tp.task-wrapper-names",
+      "type": "java.util.Set<java.lang.String>",
+      "description": "Task wrapper names.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.jetty-tp.thread-pool-alias-name",
+      "type": "java.lang.String",
+      "description": "Simple Alias Name of  ThreadPool. Use for notify.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.jetty-tp.thread-pool-name",
+      "type": "java.lang.String",
+      "description": "Name of ThreadPool.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.jetty-tp.unit",
+      "type": "java.util.concurrent.TimeUnit",
+      "description": "Timeout unit.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.log-path",
+      "type": "java.lang.String",
+      "description": "Metrics log storage path, just for \"logging\" type.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.monitor-interval",
+      "type": "java.lang.Integer",
+      "description": "Monitor interval, time unit（s）",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties",
+      "defaultValue": 5
+    },
+    {
+      "name": "dynamictp.motan-tp",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.TpExecutorProps>",
+      "description": "Motan server thread pools.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.okhttp3-tp",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.TpExecutorProps>",
+      "description": "Okhttp3 thread pools.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.platforms",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.NotifyPlatform>",
+      "description": "Notify platform configs.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.rabbitmq-tp",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.TpExecutorProps>",
+      "description": "Rabbitmq thread pools.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.rocket-mq-tp",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.TpExecutorProps>",
+      "description": "RocketMq thread pools.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.sofa-tp",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.TpExecutorProps>",
+      "description": "Sofa thread pools.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.tars-tp",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.TpExecutorProps>",
+      "description": "Tars thread pools.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.tomcat-tp.aware-names",
+      "type": "java.util.List<java.lang.String>",
+      "description": "Aware names.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.tomcat-tp.core-pool-size",
+      "type": "java.lang.Integer",
+      "description": "CoreSize of ThreadPool.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": 1
+    },
+    {
+      "name": "dynamictp.tomcat-tp.keep-alive-time",
+      "type": "java.lang.Long",
+      "description": "When the number of threads is greater than the core, this is the maximum time that excess idle threads will wait for new tasks before terminating.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": 60
+    },
+    {
+      "name": "dynamictp.tomcat-tp.maximum-pool-size",
+      "type": "java.lang.Integer",
+      "description": "MaxSize of ThreadPool.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.tomcat-tp.notify-enabled",
+      "type": "java.lang.Boolean",
+      "description": "If enable notify.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": true
+    },
+    {
+      "name": "dynamictp.tomcat-tp.notify-items",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.NotifyItem>",
+      "description": "Notify items, see {@link NotifyItemEnum}",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.tomcat-tp.platform-ids",
+      "type": "java.util.List<java.lang.String>",
+      "description": "Notify platform id",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.tomcat-tp.queue-timeout",
+      "type": "java.lang.Long",
+      "description": "Task queue wait timeout, unit (ms), just for statistics.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": 0
+    },
+    {
+      "name": "dynamictp.tomcat-tp.run-timeout",
+      "type": "java.lang.Long",
+      "description": "Task execute timeout, unit (ms), just for statistics.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": 0
+    },
+    {
+      "name": "dynamictp.tomcat-tp.task-wrapper-names",
+      "type": "java.util.Set<java.lang.String>",
+      "description": "Task wrapper names.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.tomcat-tp.thread-pool-alias-name",
+      "type": "java.lang.String",
+      "description": "Simple Alias Name of  ThreadPool. Use for notify.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.tomcat-tp.thread-pool-name",
+      "type": "java.lang.String",
+      "description": "Name of ThreadPool.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.tomcat-tp.unit",
+      "type": "java.util.concurrent.TimeUnit",
+      "description": "Timeout unit.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.undertow-tp.aware-names",
+      "type": "java.util.List<java.lang.String>",
+      "description": "Aware names.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.undertow-tp.core-pool-size",
+      "type": "java.lang.Integer",
+      "description": "CoreSize of ThreadPool.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": 1
+    },
+    {
+      "name": "dynamictp.undertow-tp.keep-alive-time",
+      "type": "java.lang.Long",
+      "description": "When the number of threads is greater than the core, this is the maximum time that excess idle threads will wait for new tasks before terminating.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": 60
+    },
+    {
+      "name": "dynamictp.undertow-tp.maximum-pool-size",
+      "type": "java.lang.Integer",
+      "description": "MaxSize of ThreadPool.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.undertow-tp.notify-enabled",
+      "type": "java.lang.Boolean",
+      "description": "If enable notify.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": true
+    },
+    {
+      "name": "dynamictp.undertow-tp.notify-items",
+      "type": "java.util.List<org.dromara.dynamictp.common.entity.NotifyItem>",
+      "description": "Notify items, see {@link NotifyItemEnum}",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.undertow-tp.platform-ids",
+      "type": "java.util.List<java.lang.String>",
+      "description": "Notify platform id",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.undertow-tp.queue-timeout",
+      "type": "java.lang.Long",
+      "description": "Task queue wait timeout, unit (ms), just for statistics.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": 0
+    },
+    {
+      "name": "dynamictp.undertow-tp.run-timeout",
+      "type": "java.lang.Long",
+      "description": "Task execute timeout, unit (ms), just for statistics.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps",
+      "defaultValue": 0
+    },
+    {
+      "name": "dynamictp.undertow-tp.task-wrapper-names",
+      "type": "java.util.Set<java.lang.String>",
+      "description": "Task wrapper names.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.undertow-tp.thread-pool-alias-name",
+      "type": "java.lang.String",
+      "description": "Simple Alias Name of  ThreadPool. Use for notify.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.undertow-tp.thread-pool-name",
+      "type": "java.lang.String",
+      "description": "Name of ThreadPool.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.undertow-tp.unit",
+      "type": "java.util.concurrent.TimeUnit",
+      "description": "Timeout unit.",
+      "sourceType": "org.dromara.dynamictp.common.entity.TpExecutorProps"
+    },
+    {
+      "name": "dynamictp.zookeeper.config-key",
+      "type": "java.lang.String",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties$Zookeeper"
+    },
+    {
+      "name": "dynamictp.zookeeper.config-version",
+      "type": "java.lang.String",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties$Zookeeper"
+    },
+    {
+      "name": "dynamictp.zookeeper.node",
+      "type": "java.lang.String",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties$Zookeeper"
+    },
+    {
+      "name": "dynamictp.zookeeper.root-node",
+      "type": "java.lang.String",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties$Zookeeper"
+    },
+    {
+      "name": "dynamictp.zookeeper.zk-connect-str",
+      "type": "java.lang.String",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties$Zookeeper"
+    },
+    {
+      "name": "dynamictp.env",
+      "type": "java.lang.String",
+      "description": "Environment, if not set, will use \"spring.profiles.active\".",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.global-executor-props",
+      "type": "org.dromara.dynamictp.common.entity.DtpExecutorProps",
+      "description": "ThreadPoolExecutor global configs.",
+      "sourceType": "org.dromara.dynamictp.common.properties.DtpProperties"
+    },
+    {
+      "name": "dynamictp.global-executor-props.executor-type",
+      "type": "java.lang.String",
+      "description": "ThreadPoolExecutor type, see {@link ExecutorType}",
+      "sourceType": "org.dromara.dynamictp.common.entity.DtpExecutorProps"
+    },
+    {
+      "name": "dynamictp.global-executor-props.queue-type",
+      "type": "java.lang.String",
+      "description": "ThreadPoolExecutor queue type, see {@link QueueTypeEnum}",
+      "defaultValue": "VariableLinkedBlockingQueue",
+      "sourceType": "org.dromara.dynamictp.common.entity.DtpExecutorProps"
+    },
+    {
+      "name": "dynamictp.global-executor-props.fair",
+      "type": "java.lang.Boolean",
+      "description": "ThreadPoolExecutor fair.",
+      "defaultValue": false,
+      "sourceType": "org.dromara.dynamictp.common.entity.DtpExecutorProps"
+    },
+    {
+      "name": "dynamictp.global-executor-props.pre-start-all-core-threads",
+      "type": "java.lang.Boolean",
+      "description": "ThreadPoolExecutor pre start all core threads.",
+      "defaultValue": false,
+      "sourceType": "org.dromara.dynamictp.common.entity.DtpExecutorProps"
+    },
+    {
+      "name": "dynamictp.global-executor-props.plugin-names",
+      "type": "java.util.Set<java.lang.String>",
+      "description": "ThreadPoolExecutor plugin names.",
+      "sourceType": "org.dromara.dynamictp.common.entity.DtpExecutorProps"
+    },
+    {
+      "name": "dynamictp.global-executor-props.auto-create",
+      "type": "java.lang.Boolean",
+      "description": "ThreadPoolExecutor auto create.",
+      "defaultValue": true,
+      "sourceType": "org.dromara.dynamictp.common.entity.DtpExecutorProps"
+    }
+  ],
+  "hints": []
+}

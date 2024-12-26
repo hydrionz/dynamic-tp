@@ -1,7 +1,5 @@
 server:
   port: 8888
-  servlet:
-    context-path: "/dynamic-tp"
 
 spring:
   application:
@@ -9,17 +7,24 @@ spring:
   profiles:
     active: dev
 
-
-logging:
-  level:
-    #root: DEBUG
-    com.alibaba.nacos.client.config.impl: WARN
-
 apollo:
   bootstrap:
     enabled: true
-    namespaces: dynamic-tp-apollo-demo-dtp.yml
-  meta: http://localhost:8080
-  config-service: http://localhost:8080
+    eagerLoad:
+      enabled: true
+    namespaces: dynamic-tp-apollo-demo-dtp.yml,application
+  meta: http://81.68.181.139:8080
 app:
   id: dynamic-tp-apollo-demo
+
+# 开启 SpringBoot Actuator Endpoint 暴露出DynamicTp指标接口
+# 开启 prometheus 指标采集端点
+management:
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'   # 测试使用，线上不要用*，按需开启

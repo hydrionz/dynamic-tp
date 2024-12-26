@@ -3,9 +3,60 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>cn.dynamictp</groupId>
+        <groupId>org.dromara.dynamictp</groupId>
         <artifactId>dynamic-tp-test</artifactId>
-        <version>1.1.0</version>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>dynamic-tp-test-common</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.dromara.dynamictp</groupId>
+            <artifactId>dynamic-tp-common</artifactId>
+            <exclusions>
+                <exclusion>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.dromara.dynamictp</groupId>
+            <artifactId>dynamic-tp-core</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.dromara.dynamictp</groupId>
+            <artifactId>dynamic-tp-extension-notify-yunzhijia</artifactId>
+        </dependency>
+    </dependencies>
 </project>
